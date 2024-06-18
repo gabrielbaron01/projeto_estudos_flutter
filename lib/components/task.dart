@@ -37,12 +37,16 @@ class _TaskState extends State<Task> {
                       width: 72,
                       height: 100,
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(4),
-                        child: Image.asset(
-                          'assets/images/dartbird.png',
-                          fit: BoxFit.cover,
-                        ),
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(
+                        widget.image,
+                        errorBuilder: (BuildContext context, Object exception,
+                            StackTrace? stackTrace) {
+                          return Image.asset('assets/images/nophoto.png');
+                        },
+                        fit: BoxFit.cover,
                       ),
+                    ),
 
                     ),
                     Column(
